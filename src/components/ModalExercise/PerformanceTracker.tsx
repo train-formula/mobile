@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Text } from 'react-native'
 import styled from 'styled-components'
 
@@ -34,9 +34,10 @@ const Input = styled.TextInput`
   height: 40;
   flex: 1;
   text-align: center;
-  border-color: ${(p) => p.theme.greyLight};
+  border-color: ${(p) =>
+    p.isComplete ? p.theme.brandPrimary : p.theme.greyLight};
   border-width: 1;
-  color: ${(p) => p.theme.white};
+  color: ${(p) => (p.isComplete ? p.theme.brandPrimary : p.theme.white)};
   ${(p) => p.theme.textBold20};
 `
 const CompleteButton = styled.View`
@@ -58,6 +59,8 @@ const CompleteButtonText = styled.Text`
 type Props = {}
 
 export const PerformanceTracker: React.FC<Props> = () => {
+  const [isComplete, setIsComplete] = useState(false)
+
   return (
     <Container>
       <Header>
@@ -66,21 +69,35 @@ export const PerformanceTracker: React.FC<Props> = () => {
       </Header>
       <Inputs>
         {/* <SetLabel>1</SetLabel> */}
-        <Input keyboardType="numeric" style={{ marginRight: 5 }} />
-        <Input keyboardType="numeric" />
+        <Input
+          keyboardType="numeric"
+          style={{ marginRight: 5 }}
+          isComplete={isComplete}
+        />
+        <Input keyboardType="numeric" isComplete={isComplete} />
       </Inputs>
       <Inputs>
         {/* <SetLabel>2</SetLabel> */}
-        <Input keyboardType="numeric" style={{ marginRight: 5 }} />
-        <Input keyboardType="numeric" />
+        <Input
+          keyboardType="numeric"
+          style={{ marginRight: 5 }}
+          isComplete={isComplete}
+        />
+        <Input keyboardType="numeric" isComplete={isComplete} />
       </Inputs>
       <Inputs>
         {/* <SetLabel>3</SetLabel> */}
-        <Input keyboardType="numeric" style={{ marginRight: 5 }} />
-        <Input keyboardType="numeric" />
+        <Input
+          keyboardType="numeric"
+          style={{ marginRight: 5 }}
+          isComplete={isComplete}
+        />
+        <Input keyboardType="numeric" isComplete={isComplete} />
       </Inputs>
       <CompleteButton>
-        <CompleteButtonText>complete</CompleteButtonText>
+        <CompleteButtonText onPress={() => setIsComplete(true)}>
+          complete
+        </CompleteButtonText>
       </CompleteButton>
     </Container>
   )
