@@ -50,10 +50,10 @@ const CompleteButton = styled.View`
   background: ${(p) => p.theme.brandPrimary};
 `
 const CompleteButtonText = styled.Text`
-  letter-spacing: 1.6;
+  letter-spacing: 2;
   text-transform: uppercase;
   color: ${(p) => p.theme.white};
-  ${(p) => p.theme.textBold18};
+  ${(p) => p.theme.text18};
 `
 
 type Props = {}
