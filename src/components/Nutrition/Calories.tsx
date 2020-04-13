@@ -1,38 +1,41 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Svg, { Circle, Text } from 'react-native-svg'
+import { ProgressCircle } from 'react-native-svg-charts'
 
-const CaloriesCount = styled(Text)``
+const CaloriesTextContainer = styled.View`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+`
+const CaloriesCount = styled.Text`
+  letter-spacing: 1;
+  color: ${(p) => p.theme.white};
+  ${(p) => p.theme.textBold16};
+`
+const CaloriesLabel = styled.Text`
+  letter-spacing: 1;
+  text-transform: lowercase;
+  color: ${(p) => p.theme.white};
+  ${(p) => p.theme.text12};
+`
 
 class Demo extends Component {
   render() {
-    const width = 200
-    const height = 200
-    const size = width < height ? width - 32 : height - 16
-    const strokeWidth = 10
-    const radius = (size - strokeWidth) / 2
-    const circunference = radius * 2 * Math.PI
-
     return (
-      <Svg width={width} height={size}>
-        <CaloriesCount
-          stroke="white"
-          fontSize="15"
-          x={size / 2}
-          y={size / 2}
-          textAnchor="middle"
-        >
-          Hey
-        </CaloriesCount>
-        <Circle
-          stroke="#2162cc"
-          fill="none"
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          strokeDasharray={`${circunference} ${circunference}`}
-        />
-      </Svg>
+      <ProgressCircle
+        style={{ height: 200 }}
+        progress={0.7}
+        progressColor={'rgb(134, 65, 244)'}
+      >
+        <CaloriesTextContainer>
+          <CaloriesCount>859</CaloriesCount>
+          <CaloriesLabel>calories left</CaloriesLabel>
+        </CaloriesTextContainer>
+      </ProgressCircle>
     )
   }
 }
