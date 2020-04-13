@@ -9,7 +9,7 @@ const categories = [
               name: 'cat to cow',
             },
             prescription: {
-              name: '3 x 5',
+              name: '3 x 5 reps',
             },
           },
           {
@@ -17,7 +17,7 @@ const categories = [
               name: 'pigeon stretch',
             },
             prescription: {
-              name: '3 x 30sec',
+              name: '3 x 30 sec',
             },
           },
         ],
@@ -29,7 +29,7 @@ const categories = [
               name: 'cat to cow',
             },
             prescription: {
-              name: '3 x 5',
+              name: '3 x 5 reps',
             },
           },
         ],
@@ -41,7 +41,7 @@ const categories = [
               name: 'cat to cow',
             },
             prescription: {
-              name: '3 x 5',
+              name: '3 x 5 reps',
             },
           },
         ],
@@ -53,7 +53,7 @@ const categories = [
               name: 'cat to cow',
             },
             prescription: {
-              name: '3 x 5',
+              name: '3 x 5 reps',
             },
           },
           {
@@ -61,7 +61,7 @@ const categories = [
               name: 'cat to cow',
             },
             prescription: {
-              name: '3 x 5',
+              name: '3 x 5 reps',
             },
           },
         ],
@@ -73,7 +73,7 @@ const categories = [
               name: 'cat to cow',
             },
             prescription: {
-              name: '3 x 5',
+              name: '3 x 5 reps',
             },
           },
         ],
@@ -99,10 +99,12 @@ const categories = [
         exercises: [
           {
             exercise: {
-              name: 'bench press',
+              name: 'back squat',
+              notes:
+                'Stand with the bar on your upper-back, and your feet shoulder-width apart. Squat down by pushing your knees to the side while moving hips back. Break parallel by Squatting down until your hips are lower than your knees. Squat back up while keeping your knees out and chest up.',
             },
             prescription: {
-              name: '4 x 8 @ 150lb',
+              name: '4 x 8 @ 225lb',
             },
           },
         ],

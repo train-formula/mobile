@@ -94,7 +94,7 @@ export const Home: React.FC<Props> = ({ navigation }) => {
       >
         <HeaderContent>
           <HeaderText>Next Up:</HeaderText>
-          <HeaderText>Back Squats</HeaderText>
+          <HeaderText>Full Body Blast</HeaderText>
           <TouchableWithoutFeedback
             onPress={() => navigation.navigate('Workout')}
           >

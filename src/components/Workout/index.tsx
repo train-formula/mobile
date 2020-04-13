@@ -65,7 +65,7 @@ export const Workout: React.FC<Props> = ({ navigation }) => {
           icon={<Feather color="#fff" name="chevron-left" />}
           onPress={() => navigation.goBack(null)}
         />
-        <WorkoutTitle>Back Squats</WorkoutTitle>
+        <WorkoutTitle>Full Body Blast</WorkoutTitle>
         {/* <WorkoutTitle>{''}</WorkoutTitle> */}
         <TouchIcon
           icon={<Feather color="#fff" name="more-horizontal" />}
@@ -73,7 +73,11 @@ export const Workout: React.FC<Props> = ({ navigation }) => {
         />
       </Header>
 
-      <Content scrollEnabled={isScrollable}>
+      <Content
+        scrollEnabled={isScrollable}
+        scrollEventThrottle={16}
+        showsVerticalScrollIndicator={false}
+      >
         {data.map((category) => {
           return (
             <>
@@ -86,6 +90,7 @@ export const Workout: React.FC<Props> = ({ navigation }) => {
                       title={exercise.exercise.name}
                       prescription={exercise.prescription.name}
                       setIsScrollable={setIsScrollable}
+                      navigation={navigation}
                     />
                   )
                 })
