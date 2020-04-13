@@ -14,7 +14,7 @@ const CaloriesTextContainer = styled.View`
 const CaloriesCount = styled.Text`
   letter-spacing: 1;
   color: ${(p) => p.theme.white};
-  ${(p) => p.theme.textBold16};
+  ${(p) => p.theme.textBold24};
 `
 const CaloriesLabel = styled.Text`
   letter-spacing: 1;
