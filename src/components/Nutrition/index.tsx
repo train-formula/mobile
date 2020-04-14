@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Calories from './Calories'
-import LineChart from './LineChart'
+import { LineChart } from './LineChart'
 import device from '../../constants/device'
 import { View } from 'react-native'
 
@@ -34,13 +34,13 @@ export const Nutrition: React.FC<Props> = () => {
       </Macros>
       <Other>
         <Test>
-          <LineChart />
+          <LineChart label="fat" grams="17" />
         </Test>
         <Test>
-          <LineChart />
+          <LineChart label="protein" grams="41" />
         </Test>
         <Test>
-          <LineChart />
+          <LineChart label="carbs" grams="24" />
         </Test>
       </Other>
     </Container>

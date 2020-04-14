@@ -35,27 +35,29 @@ const Label = styled.Text`
   ${(p) => p.theme.text12};
 `
 
-class YAxisExample extends React.PureComponent {
-  render() {
-    return (
-      <Container>
-        <Header>protein</Header>
-        <Background>
-          <Line
-            x1="0"
-            y1="0"
-            x2="180"
-            y2="0"
-            stroke="rgba(255,255,255,.15)"
-            strokeWidth="5"
-          />
-        </Background>
-        <Progress height="100" width="50">
-          <Line x1="0" y1="0" x2="180" y2="0" stroke="white" strokeWidth="5" />
-        </Progress>
-        <Label>39 grams</Label>
-      </Container>
-    )
-  }
+type Props = {
+  label: string
+  grams: string
 }
-export default YAxisExample
+
+export const LineChart: React.FC<Props> = ({ label, grams }) => {
+  return (
+    <Container>
+      <Header>{label}</Header>
+      <Background>
+        <Line
+          x1="0"
+          y1="0"
+          x2="180"
+          y2="0"
+          stroke="rgba(255,255,255,.15)"
+          strokeWidth="5"
+        />
+      </Background>
+      <Progress height="100" width={100 - grams}>
+        <Line x1="0" y1="0" x2="180" y2="0" stroke="white" strokeWidth="5" />
+      </Progress>
+      <Label>{grams} g left</Label>
+    </Container>
+  )
+}
