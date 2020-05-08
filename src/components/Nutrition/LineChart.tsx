@@ -30,7 +30,7 @@ const MacroRatio = styled.View`
 const Label = styled.Text`
   color: white;
   text-align: center;
-  letter-spacing: 1;
+  letter-spacing: 0.8;
   text-transform: lowercase;
   color: ${(p) => p.theme.white};
   ${(p) => p.theme.text12};
@@ -59,8 +59,8 @@ export const LineChart: React.FC<Props> = ({ label, grams }) => {
         <Line x1="100%" y1="0" x2="0" y2="0" stroke="white" strokeWidth="5" />
       </Progress>
       <MacroRatio>
-        <Label>19 g eaten</Label>
-        <Label>{grams} g left</Label>
+        <Label>19g eaten</Label>
+        <Label>{grams}g left</Label>
       </MacroRatio>
     </Container>
   )
