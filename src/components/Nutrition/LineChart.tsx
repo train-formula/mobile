@@ -4,16 +4,15 @@ import { Svg, Line } from 'react-native-svg'
 
 const Container = styled.View`
   position: relative;
-  width: 100%;
 `
 const Background = styled(Svg)`
   position: absolute;
-  height: 100;
+  height: 100%;
   width: 100%;
 `
 const Progress = styled(Svg)`
   position: absolute;
-  height: 100;
+  height: 100%;
   width: 100%;
 `
 const Header = styled.Text`
@@ -23,10 +22,12 @@ const Header = styled.Text`
   text-transform: uppercase;
   ${(p) => p.theme.text14};
 `
+const MacroRatio = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  padding-horizontal: 10;
+`
 const Label = styled.Text`
-  margin-top: 10;
-  position: absolute;
-  width: 100%;
   color: white;
   text-align: center;
   letter-spacing: 1;
@@ -44,20 +45,23 @@ export const LineChart: React.FC<Props> = ({ label, grams }) => {
   return (
     <Container>
       <Header>{label}</Header>
-      <Background>
+      <Background width="100%" height="100%">
         <Line
-          x1="0"
+          x1="100%"
           y1="0"
-          x2="180"
+          x2="0"
           y2="0"
           stroke="rgba(255,255,255,.15)"
           strokeWidth="5"
         />
       </Background>
-      <Progress height="100" width={100 - grams}>
-        <Line x1="0" y1="0" x2="180" y2="0" stroke="white" strokeWidth="5" />
+      <Progress width={`${grams}%`} height="100%">
+        <Line x1="100%" y1="0" x2="0" y2="0" stroke="white" strokeWidth="5" />
       </Progress>
-      <Label>{grams} g left</Label>
+      <MacroRatio>
+        <Label>19 g eaten</Label>
+        <Label>{grams} g left</Label>
+      </MacroRatio>
     </Container>
   )
 }
