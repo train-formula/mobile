@@ -13,6 +13,7 @@ type Props = {
   navigation: ModalScreenNavigationProp
 }
 
+// https://github.com/leecade/react-native-swiper use this swiper for content (examples/components/Swiper)
 export const ModalExercise: React.FC<Props> = ({ navigation }) => {
   return <ModalExerciseView navigation={navigation} />
 }

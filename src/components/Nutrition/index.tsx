@@ -17,17 +17,13 @@ const Macros = styled.View`
   padding-top: 48;
   margin-bottom: 55;
 `
-const BarcodeScannerButton = styled.View``
-const BarcodeScannerButtonText = styled.Text`
-  color: white;
-`
 const MacroMeasurement = styled.View`
   padding-horizontal: 50;
   margin-vertical: 20;
 `
 const MealsContainer = styled.View`
   margin-top: 30;
-  padding-horizontal: 20;
+  padding-horizontal: 45;
 `
 const MealAddButton = styled.View`
   flex-direction: row;
@@ -38,10 +34,9 @@ const MealAddButton = styled.View`
   margin-vertical: 10;
 `
 const MealAddButtonText = styled.Text`
-  font-size: 14;
   letter-spacing: 10;
   text-transform: uppercase;
-  ${(p) => p.theme.text18};
+  ${(p) => p.theme.text16};
 `
 const AddIcon = styled(Feather)`
   font-size: 22;
